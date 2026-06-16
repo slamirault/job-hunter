@@ -1,0 +1,771 @@
+/* ============================================
+   JOB HUNTER - Squishmallow/Tubby Nugget Theme
+   Soft pastels, rounded everything, wholesome vibes
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap');
+
+:root {
+  /* Pastel palette with warm accents */
+  --lavender: #d8d0f0;
+  --lavender-deep: #b8aee0;
+  --mint: #c8eee0;
+  --mint-deep: #7ec8b0;
+  --baby-pink: #f5d0e0;
+  --baby-pink-deep: #e8a0c0;
+  --soft-yellow: #fef0c8;
+  --peach: #fdd8c8;
+  --peach-deep: #f0a888;
+  --coral: #f8b0a0;
+  --cream: #fef8f0;
+  --warm-white: #fffaf5;
+
+  /* Functional colors */
+  --bg: var(--warm-white);
+  --card-bg: #ffffff;
+  --text: #4a3f5c;
+  --text-light: #8a7fa0;
+  --text-muted: #b0a8c0;
+  --border: #e8e0f0;
+  --shadow: rgba(120, 100, 160, 0.08);
+  --shadow-hover: rgba(120, 100, 160, 0.15);
+
+  /* Accent */
+  --primary: #b88fd0;
+  --primary-hover: #a070c0;
+  --primary-text: #ffffff;
+  --danger: #e88090;
+  --danger-hover: #d06070;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.6;
+  min-height: 100vh;
+  /* Subtle pattern background */
+  background-image:
+    radial-gradient(circle at 20% 20%, var(--lavender) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, var(--peach) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, var(--mint) 0%, transparent 60%);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-blend-mode: soft-light;
+}
+
+/* ============================================
+   Layout
+   ============================================ */
+
+.dashboard,
+.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+/* ============================================
+   Cards - soft, rounded, squishy
+   ============================================ */
+
+.card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 12px var(--shadow);
+  border: 4px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px var(--shadow-hover);
+}
+
+/* ============================================
+   Dashboard Header
+   ============================================ */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dashboard-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.encouragement {
+  font-size: 1.05rem;
+  color: var(--primary);
+  font-weight: 900;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ============================================
+   Status Summary Pills
+   ============================================ */
+
+.status-summary {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 4px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-light);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-pill:hover {
+  border-color: var(--lavender-deep);
+  transform: translateY(-1px);
+}
+
+.filter-pill.active {
+  background: var(--lavender);
+  color: var(--text);
+  border-color: var(--lavender-deep);
+}
+
+/* ============================================
+   Job Cards
+   ============================================ */
+
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.job-card {
+  cursor: pointer;
+  display: block;
+}
+
+.job-card:hover {
+  transform: translateY(-2px);
+}
+
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.job-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.job-company {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  font-weight: 900;
+}
+
+.job-company-large {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  font-weight: 700;
+}
+
+.job-card-details {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.detail {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.job-encouragement {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 900;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.job-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   Buttons - bubbly and fun
+   ============================================ */
+
+.btn-primary {
+  padding: 10px 22px;
+  border-radius: 14px;
+  border: none;
+  background: #7a50a0;
+  color: var(--primary-text);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(122, 80, 160, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(122, 80, 160, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  padding: 8px 18px;
+  border-radius: 14px;
+  border: 4px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-light);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--lavender-deep);
+  background: var(--lavender);
+  color: var(--text);
+}
+
+.btn-ghost {
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  color: var(--primary);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: var(--lavender);
+}
+
+.btn-delete {
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+  background: #fde8e8;
+  transform: scale(1.1);
+}
+
+.btn-copy {
+  padding: 6px 14px;
+  border-radius: 10px;
+  border: 4px solid var(--mint-deep);
+  background: var(--mint);
+  color: #3a8070;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-copy:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(126, 200, 176, 0.3);
+}
+
+/* ============================================
+   Forms - soft and inviting
+   ============================================ */
+
+.form-card {
+  border: 4px dashed var(--lavender-deep);
+  background: linear-gradient(to bottom right, var(--card-bg), #faf8ff);
+}
+
+.form-card h2 {
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.form-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="url"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 4px solid var(--border);
+  background: var(--card-bg);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(184, 143, 208, 0.15);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.resume-textarea {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+select {
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+/* ============================================
+   Job Detail Page
+   ============================================ */
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--primary);
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--primary-hover);
+}
+
+.job-detail-header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.job-detail-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.job-detail-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.job-detail-info {
+  margin-top: 16px;
+}
+
+.detail-item {
+  padding: 10px 0;
+  border-bottom: 3px solid var(--border);
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-right: 8px;
+}
+
+.detail-item a {
+  color: var(--primary);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.detail-item a:hover {
+  text-decoration: underline;
+}
+
+.description-text {
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #faf8ff;
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 6px;
+  border: 3px solid var(--border);
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.6;
+}
+
+/* ============================================
+   Cover Letter Panel
+   ============================================ */
+
+.cover-letter-panel h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.letter-content {
+  background: linear-gradient(to bottom right, #faf8ff, #f8f0f8);
+  border-radius: 16px;
+  padding: 20px;
+  border: 4px solid var(--lavender);
+}
+
+.letter-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.version-badge {
+  background: var(--lavender);
+  color: #6a5a90;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.iteration-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.letter-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: var(--text);
+}
+
+/* ============================================
+   Iteration Input
+   ============================================ */
+
+.iterate-section {
+  margin-top: 16px;
+}
+
+.iterate-section label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.iterate-row {
+  display: flex;
+  gap: 8px;
+}
+
+.iterate-row input {
+  flex: 1;
+}
+
+/* ============================================
+   Analysis Section
+   ============================================ */
+
+.analysis-section {
+  margin-top: 16px;
+}
+
+.analysis-content {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.analysis-group h4 {
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.match-item {
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+.match-strong {
+  background: var(--mint);
+  border: 3px solid #b0e0d0;
+}
+
+.match-gap {
+  background: var(--soft-yellow);
+  border: 3px solid #e8d890;
+}
+
+.match-item strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.match-item p {
+  color: var(--text-light);
+  margin: 0;
+}
+
+.analysis-group > p {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+/* ============================================
+   Version History
+   ============================================ */
+
+.version-history {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 4px dashed var(--border);
+}
+
+.version-history h4 {
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.version-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.version-item.active {
+  background: var(--lavender);
+  color: var(--text);
+  font-weight: 900;
+}
+
+.version-date {
+  font-size: 0.75rem;
+}
+
+.version-prompt {
+  font-style: italic;
+  font-size: 0.75rem;
+}
+
+/* ============================================
+   Empty States
+   ============================================ */
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.empty-emoji {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.empty-state p {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+/* ============================================
+   Loading & Generating States
+   ============================================ */
+
+.generating {
+  text-align: center;
+  padding: 32px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--lavender);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.generating p {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.generating-sub {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   Error Messages
+   ============================================ */
+
+.error-message {
+  background: #fde8e8;
+  border: 4px solid var(--danger);
+  color: #8a3040;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 900;
+  margin: 12px 0;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+  }
+
+  .job-detail-top {
+    flex-direction: column;
+  }
+
+  .job-detail-actions {
+    flex-wrap: wrap;
+  }
+
+  .iterate-row {
+    flex-direction: column;
+  }
+
+  .status-summary {
+    gap: 6px;
+  }
+
+  .filter-pill {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+  }
+}
