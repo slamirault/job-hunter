@@ -71,7 +71,7 @@ export default function Dashboard() {
         <div className="dashboard-title-row">
           <img src={wimble} alt="Wimble the ninja mascot" className="mascot" />
           <div>
-            <h1>Job Hunter 🥷</h1>
+            <h1>Job Hunter</h1>
             <p className="encouragement">{encouragement}</p>
           </div>
         </div>
