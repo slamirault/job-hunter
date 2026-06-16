@@ -1,5 +1,11 @@
 # Job Hunter
 
+<p align="center">
+  <img src="client/src/assets/wimble.png" alt="Wimble — the Job Hunter mascot" width="200" />
+</p>
+
+<p align="center"><em>Meet Wimble — your squishy ninja job-hunting sidekick.</em></p>
+
 A full-stack job application tracker with AI-powered cover letter generation. Paste a job description, and a 5-step agentic pipeline analyzes the role, matches it against your profile, and drafts a tailored cover letter — then iterates on it with natural language feedback.
 
 ## Tech Stack

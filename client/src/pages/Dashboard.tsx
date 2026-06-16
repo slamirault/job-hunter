@@ -9,6 +9,7 @@ import {
   getEncouragement,
   statusConfig,
 } from "../encouragement";
+import wimble from "../assets/wimble.png";
 
 const statusOrder: JobStatus[] = [
   "applied",
@@ -67,9 +68,12 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <div className="dashboard-header">
-        <div>
-          <h1>Job Hunter 🥷</h1>
-          <p className="encouragement">{encouragement}</p>
+        <div className="dashboard-title-row">
+          <img src={wimble} alt="Wimble the ninja mascot" className="mascot" />
+          <div>
+            <h1>Job Hunter 🥷</h1>
+            <p className="encouragement">{encouragement}</p>
+          </div>
         </div>
         <div className="header-actions">
           <Link to="/profile" className="btn-ghost">
